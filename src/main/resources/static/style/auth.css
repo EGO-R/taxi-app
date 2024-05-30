@@ -1,0 +1,40 @@
+body {
+    background-color: #f3c375;
+}
+
+.auth-container {
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    background: #efd6aa;
+    border-radius: 8px;
+}
+
+.form-container {
+    margin-top: 20px;
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+.error-message {
+    color: red;
+    font-weight: bold;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    background-color: #ffcc00; /* Ярко-жёлтая кнопка в стиле такси */
+    color: black;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #e6b800;
+}

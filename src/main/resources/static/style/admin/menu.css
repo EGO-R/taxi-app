@@ -1,0 +1,33 @@
+.admin-menu {
+    background-color: #444; /* Чуть темнее, чем у обычного меню */
+    color: white;
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.admin-menu nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.admin-menu nav ul li {
+    margin: 0 20px;
+}
+
+.admin-menu nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.admin-menu nav ul li a:hover {
+    color: #ffcc00; /* Ярко-жёлтый цвет при наведении */
+}

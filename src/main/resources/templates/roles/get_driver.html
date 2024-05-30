@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Get driver</title>
+</head>
+<body>
+<div th:replace="menu :: menu"></div>
+
+<form method="post">
+    <label for="select_car">Выберите машину:</label>
+    <select id="select_car" name="car_select">
+        <option th:each="car : ${cars}" th:value="${car.id}" th:text="${car.mark}"></option>
+    </select>
+
+    <input type="submit" value="Выбрать">
+</form>
+</body>
+</html>

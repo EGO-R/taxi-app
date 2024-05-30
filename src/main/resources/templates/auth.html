@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="/style/auth.css"> <!-- Подключаем CSS файл -->
+</head>
+<body>
+<div class="auth-container">
+    <h1>Аутентификация</h1>
+    <div th:if="${isError}" class="error-message">
+        Ошибка!
+    </div>
+
+    <div class="form-container">
+        Войти:
+        <form action="/auth/sign-in" method="post">
+            <div class="form-group"><label> Имя пользователя: <input type="text" name="username" required/> </label></div>
+            <div class="form-group"><label> Пароль: <input type="password" name="password" required/> </label></div>
+            <div class="form-group"><input type="submit" value="Войти" class="btn"/></div>
+        </form>
+    </div>
+    <div class="form-container">
+        Зарегистрироваться:
+        <form action="/auth/sign-up" method="post">
+            <div class="form-group"><label> Имя пользователя: <input type="text" name="username" required/> </label></div>
+            <div class="form-group"><label> Почта: <input type="email" name="email" required/> </label></div>
+            <div class="form-group"><label> Пароль: <input type="password" name="password" required/> </label></div>
+            <div class="form-group"><input type="submit" value="Зарегистрироваться" class="btn"/></div>
+        </form>
+    </div>
+</div>
+</body>
+</html>

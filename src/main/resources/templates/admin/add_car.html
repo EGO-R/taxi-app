@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add car</title>
+    <link rel="stylesheet" href="/style/admin/add_car.css">
+    <link rel="stylesheet" href="/style/admin/menu.css">
+</head>
+<body>
+<div th:replace="admin/menu :: menu"></div>
+<div class="add-car-container">
+    <div th:if="${isAdded}" class="notification">
+        <p th:text="|${car.mark} is added|"></p>
+    </div>
+    <form method="post" class="add-car-form">
+        <div class="form-group">
+            <label for="car_mark">Car:</label>
+            <input type="text" id="car_mark" name="car_mark"/>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Add car" class="btn">
+        </div>
+    </form>
+</div>
+</body>
+</html>

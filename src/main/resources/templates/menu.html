@@ -1,0 +1,14 @@
+<div class="menu" th:fragment="menu">
+    <nav>
+        <ul>
+            <li th:if="${isAdmin}"><a href="/admin">Админ</a></li>
+            <li><a href="/auth">Аутентификация</a></li>
+            <li><a href="/logout">Выйти из аккаунта</a></li>
+            <li th:if="${isDriver || isAdmin}"><a href="/awaiting">Ожидающие поездки</a></li>
+            <li><a href="/history">История</a></li>
+            <li><a href="/home">Домашняя страница</a></li>
+            <li><a href="/">Начальная страница</a></li>
+            <li><a href="/request">Заявка</a></li>
+        </ul>
+    </nav>
+</div>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Drive info admin</title>
+    <link rel="stylesheet" href="/style/admin/drive_info.css">
+    <link rel="stylesheet" href="/style/admin/menu.css">
+</head>
+<body>
+<div th:replace="admin/menu :: menu"></div>
+<div class="drive-info-container">
+    <h1 th:text="|Поездка ${drive.id}|"></h1>
+
+    <form method="post" class="drive-form">
+        <div class="form-group">
+            <label for="departureLocation">Откуда:</label>
+            <input id="departureLocation" name="departureLocation" th:value="${drive.departureLocation}">
+        </div>
+
+        <div class="form-group">
+            <label for="arrivalLocation">Куда:</label>
+            <input id="arrivalLocation" name="arrivalLocation" th:value="${drive.arrivalLocation}">
+        </div>
+
+        <div class="form-group">
+            <label for="passenger">Пассажир:</label>
+            <select id="passenger" name="passenger">
+                <option th:each="user : ${users}" th:value="${user.id}" th:text="|${user.username} - ${user.role}|" th:selected="${user.id==drive.passenger.id}"></option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="status">Статус:</label>
+            <select id="status" name="status">
+                <option th:each="status : ${statuses}" th:value="${status}" th:text="${status}" th:selected="${status==drive.status}"></option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="driver">Водитель:</label>
+            <select id="driver" name="driver">
+                <option th:each="user : ${users}" th:value="${user.id}" th:text="|${user.username} - ${user.role}|" th:selected="${drive.driver!=null && user.id==drive.driver.id}"></option>
+                <option value="-1" th:selected="${drive.driver==null}">Нет</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="car">Машина:</label>
+            <select id="car" name="car">
+                <option th:each="car : ${cars}" th:value="${car.id}" th:text="|${car.mark}|" th:selected="${drive.car!=null && car.id==drive.car.id}"></option>
+                <option value="-1" th:selected="${drive.car==null}">Нет</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <input type="submit" value="Сохранить изменения" class="btn">
+        </div>
+    </form>
+</div>
+</body>
+</html>

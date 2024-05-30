@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Info</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="/style/info.css">
+    <link rel="stylesheet" href="/style/menu.css">
+</head>
+<body>
+<div th:replace="menu :: menu"></div>
+<div class="info-container">
+    <h1 th:text="|Поездка ${drive.id}:|"></h1>
+    <p th:text="|Пассажир: ${drive.passenger}|"></p>
+    <p th:text="|Водитель: ${drive.driver}|"></p>
+    <p th:text="|Маршрут: ${drive.departureLocation} - ${drive.arrivalLocation}|"></p>
+    <p th:text="|Статус: ${drive.status}|"></p>
+    <p th:text="|Машина: ${drive.car}|"></p>
+
+    <div th:if="${ifOngoing}">
+        <a th:href="|/drive/finish/${drive.id}|" class="btn">Завершить поездку</a>
+    </div>
+
+    <div th:if="${ifAwaiting and ifDriver}">
+        <a th:href="|/drive/accept/${drive.id}|" class="btn">Принять поездку</a>
+    </div>
+
+    <div th:if="${ifAwaiting && !ifDriver}">
+        <a th:href="|/drive/cancel/${drive.id}|" class="btn">Отменить поездку</a>
+    </div>
+</div>
+</body>
+</html>

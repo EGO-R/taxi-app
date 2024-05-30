@@ -1,0 +1,41 @@
+body {
+    background-color: #f3c375;
+}
+
+.cars-container {
+    width: 80%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #efd6aa;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.cars-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.car-item {
+    padding: 10px;
+    margin-bottom: 5px;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.car-item:hover {
+    background-color: #e6e6e6;
+}
+
+.car-item a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    display: block;
+}
+
+h1 {
+    text-align: center;
+}
