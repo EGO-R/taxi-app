@@ -33,8 +33,8 @@ public class GetRoleController {
     }
 
     @PostMapping("/driver")
-    public String getDriver(@RequestParam("car_select") Long id) {
-        var optionalCar = carService.findById(id);
+    public String getDriver(@RequestParam("carId") Long carId) {
+        var optionalCar = carService.findById(carId);
         if (optionalCar.isEmpty())
             return "errors/not_found";
         var car = optionalCar.get();

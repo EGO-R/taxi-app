@@ -27,13 +27,6 @@ public class AuthController {
         return "auth";
     }
 
-    // TODO: 30.05.2024 проверить нужность
-    @GetMapping("/error")
-    public String getFormError(Model model) {
-        model.addAttribute("isError", true);
-        return "auth";
-    }
-
 
     @PostMapping("/sign-up")
     public void signUp(@RequestParam("username") String username,

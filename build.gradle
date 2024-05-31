@@ -44,13 +44,3 @@ dependencies {
 tasks.named('test') {
 //	useJUnitPlatform()
 }
-
-task runOnDocker(type: Exec) {
-	runOnDocker.dependsOn bootJar
-	workingDir "."
-	commandLine "cmd", "/c", 'docker-compose', 'up', '--build'
-}
-
-if (project.hasProperty("doRunOnDocker")) {
-	bootJar.finalizedBy runOnDocker
-}
